@@ -61,7 +61,7 @@ def loginuser(request):
                             password=request.POST['password'])
         if user is None:
             dict_to_pass = {'form': AuthenticationForm(),
-                            'error': 'Usernsme and password did not match'
+                            'error': 'Username and password did not match'
                            }
             return render(request, 'todolist\login.html', dict_to_pass)
         else:
