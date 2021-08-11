@@ -1,19 +1,20 @@
 {% extends 'todolist/base.html' %}
 
 {% block content %}
-
-welcome user <br>
-
+<h2>welcome user </h2><br>
+Completed Tasks <br>
 <ul>
   {% for todo in todos %}
 
   <li>
+    <!-- {{ todo.created }} -->
     <a href="{% url 'viewtodo'  todo.id  %}">
     {% if todo.important %}<b>{% endif %}
       {{ todo.title }}
       {% if todo.important %}</b>{% endif %}
       {% if todo.memo %} - {{ todo.memo }}{% endif %}
       </a>
+      {{ todo.completed|date:'M j Y H:i' }}
   </li>
   {% endfor %}
 </ul>

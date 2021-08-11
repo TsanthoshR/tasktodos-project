@@ -4,6 +4,9 @@
 Logged In as {{ user.username }}
 
 <!-- <a href="{ url 'logoutuser' %}">Logout</a> -->
+<a href="{% url 'createtodo' %}">Create Todos </a>
+<a href="{% url 'welcome' %}">Current Todos </a>
+<a href="{% url 'completedtodos' %}">Completed Todos </a>
 
 <form class="" action="{% url 'logoutuser' %}" method="post"> {% csrf_token %}
   <button type="submit">Logout</button>
@@ -16,6 +19,5 @@ Logged In as {{ user.username }}
 <a href="{% url 'loginuser' %}">Log In</a>
 
 {% endif %}
-<br>
-<br>
+
 {% block content %}{% endblock %}
