@@ -1,0 +1,18 @@
+{% extends 'todolist/base.html' %}
+
+{% block content %}
+<h1> Create task</h1>
+
+<h2>  {{ error }} </h2>
+<form   method="post"> {% csrf_token %}
+
+  <!-- action="index.html" -->
+
+
+{{ form.as_p }}
+<button type="submit" name="SIGNUP">ADD TASK</button>
+</form>
+
+<br>
+
+{% endblock %}
